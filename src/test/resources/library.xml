@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE library [
+        <!ELEMENT library (genres)>
+        <!ATTLIST library title CDATA #REQUIRED>
+        <!ELEMENT genres (genre*)>
+        <!ELEMENT genre (serials)>
+        <!ATTLIST genre name CDATA #REQUIRED>
+        <!ELEMENT serials (serial*)>
+        <!ELEMENT serial EMPTY>
+        <!ATTLIST serial name CDATA #REQUIRED season_count CDATA #REQUIRED rating CDATA #REQUIRED>
+        ]>
+
+<library title="title1" >
+    <genres>
+        <genre name="genre1">
+            <serials>
+                <serial name = "name1" season_count="4" rating="4.8"/>
+            </serials>
+        </genre>
+        <genre name="genre2">
+            <serials>
+                <serial name = "name2" season_count="3" rating="3.8"/>
+            </serials>
+        </genre>
+    </genres>
+</library>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<library title="title1">
+    <genres>
+        <genre name="genre1">
+            <serials>
+                <serial name="name1" rating="4.8" season_count="7"/>
+            </serials>
+        </genre>
+        <genre name="genre2">
+            <serials>
+                <serial name="name2" rating="5.0" season_count="3"/>
+            </serials>
+        </genre>
+    </genres>
+</library>
