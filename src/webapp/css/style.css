@@ -1,6 +1,171 @@
 *{box-sizing: border-box;}
 html, body {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	height: 100vh;
+	display: grid;
+	grid-template-areas:
+	"header catalog"
+	"content catalog";
+	grid-template-columns: 1fr 300px;
+	grid-template-rows: 1fr 4fr;
+	gap: 10px;
+}
+
+.header {
+	grid-area: header;
+	background-color: #675BA7;
+	display: grid;
+	grid-template-areas:
+	"title . . . . ."
+	". . in isc ir create-button";
+	grid-template-columns: 1fr auto;
+	grid-template-rows: 1fr auto;
+	gap: 10px;
+}
+.header-item-title {
+	grid-area: title;
+}
+.header-item-create-button {
+	grid-area: create-button;
+}
+.header-item-input-name {
+	grid-area: in;
+	margin: 16px 0px 16px 16px;
+}
+.header-item-input-season-count {
+	grid-area: isc;
+	margin: 16px 0px 16px 16px;
+}
+.header-item-create-input-rating {
+	grid-area: ir;
+	margin: 16px 0px 16px 16px;
+}
+
+
+.content {
+	grid-area: content;
+	background-color: #9BC850;
+	padding: 16px;
+	display: grid;
+	grid-template-areas:
+	"name name"
+	"otherInfo otherInfo"
+	"descTitle descTitle"
+	"desc desc"
+	"delete save";
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: repeat(3, auto) 1fr auto;
+	gap: 10px;
+}
+.item-name-content {
+	grid-area: name;
+}
+.item-season-count-and-rating-info-content {
+	grid-area: otherInfo;
+}
+.item-description-title-content {
+	grid-area: descTitle;
+}
+.description-input-field {
+	grid-area: desc;
+	margin: 16px;
+	font-size: 18px;
+	word-wrap: break-word;
+	word-break: break-all;
+}
+.item-delete-button-content {
+	grid-area: delete;
+}
+.item-save-button-content {
+	grid-area: save;
+}
+
+.catalog {
+	grid-area: catalog;
+	background-color: #A62E5C;
+}
+
+
+.card {
+	box-shadow: 10px 4px 10px 3px rgba(0, 0, 0, .5);
+}
+.padding-16 { padding: 16px;}
+.padding-8 { padding: 8px;}
+.padding-4 { padding: 4px;}
+.margin-16 { margin: 16px;}
+.margin-8 { margin: 8px;}
+.margin-4 { margin: 4px;}
+.wc-h { height: auto;}
+.wc-w { width: auto;}
+.mp-h{ height: 100%;}
+.mp-w{ width: 100%;}
+.center {align: center}
+.left {align: left}
+.right {align: right}
+.white-text {
+    color: white;
+}
+.purpure {
+	background-color: #A62E5C;
+}
+.green {
+	background-color: #9BC850;
+}
+.custom-button {
+	box-shadow: 10px 4px 10px 3px rgba(0, 0, 0, .5);
+	margin: 8px;
+	color: white;
+	padding: 16px;
+}
+
+.card-grid {
+	height:100%;
+    display: grid;
+	grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+}
+.card-left-center {grid-area: 2 / 1 / 2 / 1;
+	background-color: #9BC850;}
+.card-right-center {grid-area: 2 / 3 / 2 / 3;
+	background-color: #9BC850;}
+.card-center {grid-area: 2 / 2 / 2 / 2;}
+.card-center-bot {grid-area: 3 / 2 / 3 / 2;}
+.prokrutka {
+	overflow-y: auto; /* прокрутка по вертикали */
+}
+
+.searche-grid {
+	height: 100%;
+	display: grid;
+	grid-template-areas:
+	"searche button-search"
+	"list list";
+	grid-template-columns: 1fr auto;
+	grid-template-rows: auto 1fr;
+	gap: 10px;
+}
+
+.searche-item-button-input {
+	grid-area: button-search;
+}
+.searche-item-text-input {
+	grid-area: searche;
+	margin: 16px 0px 16px 16px;
+}
+
+.searche-item-list {
+	grid-area: list;
+}
+
+.serial {
+	background-color: #675BA7;
+	margin: 8px;
+	padding: 8px;
+	word-wrap: break-word;
+	word-break: break-all;
 }
 
