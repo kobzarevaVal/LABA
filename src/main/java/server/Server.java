@@ -22,7 +22,7 @@ public class Server implements ISerialServer {
             ISerialServer stub = (ISerialServer) UnicastRemoteObject.exportObject(obj, 0);
 
             Registry registry = LocateRegistry.createRegistry(3034);
-            registry.rebind("ISerialServer", stub);k
+            registry.rebind("ISerialServer", stub);
 
             System.err.println("Server ready");
         } catch (Exception e) {
