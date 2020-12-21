@@ -1,4 +1,4 @@
-var arrayXC = JSON.parse(`[
+const arrayXC = JSON.parse(`[
 	{
 		"name":"name_1",
 		"season_count":4,
@@ -20,18 +20,18 @@ function Serial(id, name, season_count, rating, descriprion) {
 	this.rating = rating;
 	this.descriprion = descriprion;
 }
-var serials = new Array();
+const serials = new Array();
 
-var mainContainerView = document.querySelector(".searche-item-list");
+const mainContainerView = document.querySelector(".searche-item-list");
 
-for (var index of arrayXC) {
+for (let index of arrayXC) {
 	addSerial(arrayXC[i].name, arrayXC[i].season_count, arrayXC[i].rating);
 }
 
 function addNewSerial() {
-	var name = document.getElementById("inputNameId").value;
-	var season_count = document.getElementById("inputSeasonCountId").value;
-	var rating = document.getElementById("inputRatingId").value;
+	const name = document.getElementById("inputNameId").value;
+	const season_count = document.getElementById("inputSeasonCountId").value;
+	const rating = document.getElementById("inputRatingId").value;
 	if (name.length > 0 && season_count.length > 0 && rating.length > 0) {
 		addSerial(name, season_count, rating);
 
@@ -42,21 +42,21 @@ function addNewSerial() {
 }
 
 function addSerial(name, season_count, rating) {
-	var newSerial = new Serial(i++, name, season_count, rating);
+	const newSerial = new Serial(i++, name, season_count, rating);
 	serials.push(newSerial);
 	createView(newSerial);
 }
 
 function createView(serial) {
 
-	var containerView = document.createElement("div");
-	var nameView = document.createElement("h3");
-	var seasonCountView = document.createElement("h4");
-	var ratingView = document.createElement("h4");
+	const containerView = document.createElement("div");
+	const nameView = document.createElement("h3");
+	const seasonCountView = document.createElement("h4");
+	const ratingView = document.createElement("h4");
 
-	var nameText = document.createTextNode("Name: " + serial.name);
-	var seasonCountText = document.createTextNode("Season count: " + serial.season_count);
-	var ratingText = document.createTextNode("Rating: " + serial.rating);
+	const nameText = document.createTextNode("Name: " + serial.name);
+	const seasonCountText = document.createTextNode("Season count: " + serial.season_count);
+	const ratingText = document.createTextNode("Rating: " + serial.rating);
 
 	nameView.appendChild(nameText);
 	seasonCountView.appendChild(seasonCountText);
@@ -74,11 +74,11 @@ function createView(serial) {
 }
 
 function searchSerial() {
-	var searcheName = document.getElementById("testasdasd").value;
+	const searcheName = document.getElementById("testasdasd").value;
 
-	var newList = new Array();
+	const newList = new Array();
 
-	for (var index in serials) {
+	for (let index in serials) {
 		if (serials[index].name.includes(searcheName)) {
 			newList.push(serials[index]);
 		}
@@ -92,17 +92,17 @@ function updateList(newList) {
 		mainContainerView.removeChild(mainContainerView.firstChild);
 	}
 
-	for (var index in newList) {
+	for (let index in newList) {
 		createView(newList[index]);
 	}
 }
 
 function onClickItem(itemId) {
 	clearContentView();
-	var item = getById(itemId);
+	const item = getById(itemId);
 
-	var nameViewContent = document.getElementById("serialNameContentId");
-	var seasonCountAndRatingViewContent = document.getElementById("serialSeasonCountAndRatingContentId");
+	const nameViewContent = document.getElementById("serialNameContentId");
+	const seasonCountAndRatingViewContent = document.getElementById("serialSeasonCountAndRatingContentId");
 
 	nameViewContent.appendChild(document.createTextNode(item.name));
 
@@ -117,7 +117,7 @@ function onClickItem(itemId) {
 }
 
 function getById(id) {
-	for (var index in serials) {
+	for (let index in serials) {
 		if (serials[index].id == id) {
 			return serials[index];
 		}
@@ -125,9 +125,9 @@ function getById(id) {
 }
 
 function onClickSaveItem() {
-	var itemId = document.getElementById("saveContentButtonId").value;
-	var descriptionText = document.getElementById("serialDescriprionContentId").value;
-	for (var index in serials) {
+	const itemId = document.getElementById("saveContentButtonId").value;
+	const descriptionText = document.getElementById("serialDescriprionContentId").value;
+	for (let index in serials) {
 		if (serials[index].id == itemId) {
 			serials[index].descriprion = descriptionText;
 			break;
@@ -138,8 +138,8 @@ function onClickSaveItem() {
 }
 
 function onClickRemoveItem() {
-	var itemId = document.getElementById("deleteContentButtonId").value;
-	for (var index in serials) {
+	const itemId = document.getElementById("deleteContentButtonId").value;
+	for (let index in serials) {
 		if (serials[index].id == itemId) {
 			mainContainerView.removeChild(document.getElementById(itemId));
 			serials.splice(index, 1);
@@ -151,12 +151,12 @@ function onClickRemoveItem() {
 }
 
 function clearContentView() {
-	var nameViewContent = document.getElementById("serialNameContentId");
+	const nameViewContent = document.getElementById("serialNameContentId");
 	while (nameViewContent.firstChild) {
 		nameViewContent.removeChild(nameViewContent.firstChild);
 	}
 
-	var seasonCountAndRatingViewContent = document.getElementById("serialSeasonCountAndRatingContentId");
+	const seasonCountAndRatingViewContent = document.getElementById("serialSeasonCountAndRatingContentId");
 	while (seasonCountAndRatingViewContent.firstChild) {
 		seasonCountAndRatingViewContent.removeChild(seasonCountAndRatingViewContent.firstChild);
 	}
